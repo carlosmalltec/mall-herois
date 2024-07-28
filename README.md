@@ -11,11 +11,15 @@
 
 # Pacotes
 
-    dio: ^5.5.0+1
-    sqflite: ^2.3.3+1
-    animations: ^2.0.11
+    cupertino_icons: ^1.0.6
+    flutter_modular: ^6.3.4
+    dio: 5.5.0+1
+    sqflite: 2.3.3+1
+    animations: 2.0.11
     equatable: ^2.0.5
     dartz: ^0.10.1
+    shimmer: ^3.0.0
+    oktoast: ^3.4.0
 
     => development
     mocktail: ^1.0.4
