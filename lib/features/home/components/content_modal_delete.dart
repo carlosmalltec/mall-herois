@@ -4,7 +4,6 @@ import 'package:flutter_modular/flutter_modular.dart';
 import '../../../components/button/button_custom.dart';
 import '../../../components/styles/const_colors.dart';
 import '../../../components/styles/text_styles.dart';
-import '../../../constants/const_pages.dart';
 import '../../../services/heroes/data/models/heroes_model.dart';
 
 class ContentModalDelete extends StatelessWidget {
@@ -42,10 +41,7 @@ class ContentModalDelete extends StatelessWidget {
                 ),
               ),
               ButtonCustom(
-                onPressed: () => Modular.to.navigate(
-                  ConstPages.updateHeroesPage,
-                  arguments: model,
-                ),
+                onPressed: () => Modular.to.pop(),
                 width: MediaQuery.sizeOf(context).width * .4,
                 colorBackground: ConstColors.blueStrong,
                 child: Text(
