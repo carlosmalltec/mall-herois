@@ -66,6 +66,13 @@ class _UpdateHeroesScreenState extends State<UpdateHeroesScreen> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: ConstColors.blueStrong,
+        leading: InkWell(
+          onTap: () => Modular.to.navigate(ConstPages.home),
+          child: const Icon(
+            Icons.arrow_back,
+            color: ConstColors.grayLight,
+          ),
+        ),
         title: const Text(
           'Atualizar os Dados',
           style: TextStyle(

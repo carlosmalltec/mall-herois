@@ -16,7 +16,6 @@ import '../../../services/categorys/data/models/category_model.dart';
 import '../../../services/heroes/data/models/request_model.dart';
 import '../controllers/heroes_controllers.dart';
 
-
 class RegisterHeroesScreen extends StatefulWidget {
   final HeroesControllers controller;
   final DropdownCategoryController categoryController;
@@ -48,6 +47,13 @@ class _RegisterHeroesScreenState extends State<RegisterHeroesScreen> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: ConstColors.blueStrong,
+        leading: InkWell(
+          onTap: () => Modular.to.navigate(ConstPages.home),
+          child: const Icon(
+            Icons.arrow_back,
+            color: ConstColors.grayLight,
+          ),
+        ),
         title: const Text(
           'Cadastrar um novo Herói',
           style: TextStyle(
