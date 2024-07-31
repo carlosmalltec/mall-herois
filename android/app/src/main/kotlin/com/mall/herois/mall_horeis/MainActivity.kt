@@ -1,4 +1,4 @@
-package com.mall.herois.mall_horeis
+package com.mall.heroes.malltec_heroes
 
 import io.flutter.embedding.android.FlutterActivity
 
