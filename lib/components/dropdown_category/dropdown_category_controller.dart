@@ -13,8 +13,8 @@ class DropdownCategoryController extends ChangeNotifier {
   }) : _categoryStore = categoryStore;
 
   TypeStates loadingStates = TypeStates.notLoading;
-  setLoadingCategory(TypeStates p0) {
-    loadingStates = p0;
+  setLoadingCategory(TypeStates value) {
+    loadingStates = value;
     notifyListeners();
   }
 

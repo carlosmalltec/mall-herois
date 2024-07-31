@@ -4,12 +4,14 @@ import '../entity.dart';
 class HeroesModelStorage extends Entity {
   final int? id;
   final String? name;
-  final CategoryModelStorage? categorys;
+  final int? active;
+  final CategoryModelStorage? category;
 
   HeroesModelStorage({
     this.id,
     this.name,
-    this.categorys,
+    this.active,
+    this.category,
   });
 
   @override
@@ -17,14 +19,16 @@ class HeroesModelStorage extends Entity {
       HeroesModelStorage(
           id: json["Id"],
           name: json["Name"],
-          categorys: json["Categorys"] != null
-              ? CategoryModelStorage.fromMap(json["Categorys"])
+          active: json["Active"],
+          category: json["Category"] != null
+              ? CategoryModelStorage.fromMap(json["Category"])
               : null);
 
   @override
   Map<String, dynamic> toMap() => {
         "Id": id,
         "Name": name,
-        "Categorys": categorys?.toMap(),
+        "Active": active,
+        "Category": category?.toMap(),
       };
 }

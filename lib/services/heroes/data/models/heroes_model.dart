@@ -32,7 +32,7 @@ class HeroesModel {
         id: json["Id"],
         active: json["Active"],
         category: json["Category"] != null
-            ? CategoryModel.fromMap(json)
+            ? CategoryModel.fromMap(json["Category"])
             : CategoryModel.empty(),
       );
 
