@@ -11,7 +11,7 @@ class TextStylesCustom {
       fontWeight: FontWeight.w600,
       fontSize: 15,
       height: 1.5,
-      color: ConstColors.neutralStronger,
+      color: ConstColors.blueWhite,
     );
     return secondStyle != null ? p0.merge(secondStyle) : p0;
   }

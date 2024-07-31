@@ -34,7 +34,6 @@ class _DropdownViewCategoryState extends State<DropdownViewCategory> {
   void initState() {
     WidgetsBinding.instance.addPostFrameCallback((_) async {
       await _controller.getCategory();
-      print('xxx ${_controller.listCategorys.length}');
     });
     super.initState();
   }

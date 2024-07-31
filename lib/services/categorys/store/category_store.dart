@@ -87,12 +87,10 @@ class CategoryStore {
     bool isConnection = await checkInternet.isConnection();
     if (isConnection) {
       final result = await findAllCategoryServer();
-      print(' ====== ${result}');
       return result.fold(
         (l) => Left(l),
         (response) {
           if (response != null) {
-            print(' ====== aqq');
             saveCategoryStorage(response);
           }
           return Right(response);
