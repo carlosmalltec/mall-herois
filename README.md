@@ -2,6 +2,16 @@
 
     Cadastrar Heróris com base nas categorias.
 
+# Controle de cache
+
+    - Para listagens das categorias e dos Heróis serão armazenadas em memória. Para evitar inserir dados em memória a cada listagem utilizei um controle de cache de 5 minutos, cada requisição é analisada com base nessa regra e armazena local ou não.
+
+
+    - Após a primeira listagem com sucesso (com internet) o restante pode seguir sem. Cadastrar, editar e deletar.
+
+
+    - Caso não exista internet no ato do cadastro, edição ou na exclusão a request será gravada local e ao acessar a home envia a requisição.
+
 # Framework Flutter
 
     Flutter 3.22.2 • channel stable • https://github.com/flutter/flutter.git
