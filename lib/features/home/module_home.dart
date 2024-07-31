@@ -1,7 +1,6 @@
 import 'package:flutter_modular/flutter_modular.dart';
 
 import '../../components/dropdown_category/dropdown_category_controller.dart';
-import '../../services/categorys/category_module.dart';
 import '../../services/categorys/store/category_store.dart';
 import 'controllers/home_controllers.dart';
 import 'pages/home_screen.dart';
@@ -18,11 +17,6 @@ class ModuleHome extends Module {
       ),
     );
   }
-
-    @override
-  List<Module> get imports => [
-        ModuleCategory(),
-      ];
 
   @override
   void routes(RouteManager r) {

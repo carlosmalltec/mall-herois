@@ -18,11 +18,9 @@ class CategoryRepository {
       RestClientResponse result = await restClient.auth().get(ConstUrls.category);
       if (result.statusCode == 200) {
         final response = result.data['Items'] as List<dynamic>;
-        print(' ====== ${response.runtimeType} ${response.length}');
         final results = response
             .map<CategoryModel>((categorys) => CategoryModel.fromMap(categorys))
             .toList();
-            print(' ====== ${results.length}');
         return Right(results);
       }
 
@@ -33,7 +31,6 @@ class CategoryRepository {
       return Left(FormatExceptionDecode(
           message: "Falha interna, não foi possível fazer o decode."));
     } catch (e) {
-      print(' ====== $e');
       return Left(UnknownError(message: e.toString()));
     }
   }
