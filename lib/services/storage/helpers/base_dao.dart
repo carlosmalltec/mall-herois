@@ -3,7 +3,7 @@
 import 'dart:async';
 import 'package:sqflite/sqflite.dart';
 import '../connection/connection_sqflite.dart';
-import './entity.dart';
+import 'entity.dart';
 
 abstract class BaseDAO<T extends Entity> {
   Future<Database> get db => ConnectionSqfliteService.getInstance().db;

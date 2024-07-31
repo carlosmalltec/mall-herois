@@ -1,0 +1,2 @@
+enum TypeConfigures { category, heroes }
+

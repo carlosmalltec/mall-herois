@@ -2,8 +2,9 @@ import 'package:dartz/dartz.dart';
 import 'package:malltec_heroes/services/rest_client/check_state_network/check_network.dart';
 import 'package:malltec_heroes/services/rest_client/failures.dart';
 
-import '../../storage/models/category/category_base_dao.dart';
-import '../../storage/models/category/category_model_storage.dart';
+import '../../storage/helpers/cache_save_category/save_category_cache.dart';
+import '../../storage/helpers/category/category_base_dao.dart';
+import '../../storage/helpers/category/category_model_storage.dart';
 import '../../type_failures/errors.dart';
 import '../../type_failures/format_exception_decode.dart';
 import '../../type_failures/not_found_result.dart';
@@ -16,11 +17,13 @@ class CategoryStore {
   final CategoryRepository repository;
   final CheckInternet checkInternet;
   final CategoryBaseDAO categoryBaseDAO;
+  final SaveCategoryToCache cacheCategorys;
 
   CategoryStore({
     required this.repository,
     required this.checkInternet,
     required this.categoryBaseDAO,
+    required this.cacheCategorys,
   });
 
   Future<Either<Failures, List<CategoryModel>?>> findAllCategoryServer() async {
@@ -75,9 +78,8 @@ class CategoryStore {
           ),
         );
       }
-      final List<Object?> result =
-          await categoryBaseDAO.insertListCategorys(prepareList);
-      return result.isNotEmpty ? true : false;
+      await cacheCategorys.saveCategoryTimeCache(prepareList);
+      return true;
     } catch (e) {
       return false;
     }

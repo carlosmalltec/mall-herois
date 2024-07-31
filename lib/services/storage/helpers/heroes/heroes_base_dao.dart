@@ -1,7 +1,7 @@
 
 import '../../../../constants/const_tables.dart';
 import '../base_dao.dart';
-import './heroes_storage.dart';
+import 'heroes_storage.dart';
 
 class HeroesStorage extends BaseDAO<HeroesModelStorage> {
   @override

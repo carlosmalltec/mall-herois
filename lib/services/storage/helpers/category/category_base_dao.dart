@@ -1,7 +1,7 @@
 import 'package:sqflite/sqflite.dart';
 
 import '../../../../constants/const_tables.dart';
-import '../../models/category/category_model_storage.dart';
+import 'category_model_storage.dart';
 
 import '../base_dao.dart';
 

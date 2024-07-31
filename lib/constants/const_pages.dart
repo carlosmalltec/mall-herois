@@ -1,8 +1,5 @@
 class ConstPages {
   ConstPages._();
 
-  static const String home  = "/home";
+  static const String home  = "/home/";
 }
-
-
-
