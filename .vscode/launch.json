@@ -5,9 +5,10 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "mall-herois",
+      "name": "mall-heroes",
       "request": "launch",
-      "type": "dart"
+      "type": "dart",
+      "toolArgs": ["--dart-define-from-file", ".env"]
     }
   ]
 }

@@ -1,4 +1,4 @@
-name: mall_horeis
+name: malltec_heroes
 description: "Lista de Heróis"
 publish_to: 'none' 
 version: 1.0.0+1
@@ -33,3 +33,20 @@ flutter:
   assets:
     - assets/images/
     - assets/sql/
+    - assets/fonts/
+
+  fonts:
+    - family: Poppins
+      fonts:
+        - asset: assets/fonts/Poppins-Light.ttf
+          weight: 300
+        - asset: assets/fonts/Poppins-Regular.ttf
+          weight: 400
+        - asset: assets/fonts/Poppins-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/Poppins-Bold.ttf
+          weight: 600
+        - asset: assets/fonts/Poppins-SemiBold.ttf
+          weight: 500
+        - asset: assets/fonts/Poppins-Black.ttf
+          weight: 700

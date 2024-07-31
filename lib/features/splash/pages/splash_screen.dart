@@ -1,9 +1,12 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_modular/flutter_modular.dart';
+import 'package:malltec_heroes/components/toast/toast.dart';
 
-import '../../../constants/const_colors.dart';
+import '../../../components/styles/const_colors.dart';
 import '../../../constants/const_drawables.dart';
+import '../../../constants/const_pages.dart';
 import '../controllers/splash_controller.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -26,15 +29,13 @@ class _SplashScreenState extends State<SplashScreen>
   void checkAuth() {
     _controller.verificationAuth(
       onSuccess: () {
-        // Modular.to.navigate(ConstPages.home);
+        Modular.to.navigate(ConstPages.home);
       },
       onError: () {
-        // Scaffold.of(context).showSnackBar(
-        //   SnackBar(
-        //     content: Text(error.toString()),
-        //   ),
-        // );
-        // Modular.to.navigate(ConstPages.login);
+        Toast.showToastError(
+            title: "Oops!",
+            description: "Não identificamos seu dados de acesso!");
+        //  TODO Modular.to.navigate(ConstPages.login);
       },
     );
   }
@@ -50,6 +51,7 @@ class _SplashScreenState extends State<SplashScreen>
     _animation = Tween<double>(begin: 0, end: 2 * pi).animate(
       _animationController,
     );
+    checkAuth();
   }
 
   @override
@@ -62,7 +64,7 @@ class _SplashScreenState extends State<SplashScreen>
   Widget build(BuildContext context) => AnimatedBuilder(
         animation: _animationController,
         builder: (_, __) => ColoredBox(
-          color:  const Color(ConstColors.blueLight),
+          color:  ConstColors.blueLight,
           child: Center(
             child: Transform(
               alignment: Alignment.center,
@@ -70,9 +72,11 @@ class _SplashScreenState extends State<SplashScreen>
               child: AnimatedOpacity(
                 duration: _animationController.duration!,
                 opacity: 1,
-                child: Image.asset(
-                  ConstDrawables.logo,
-                  width: MediaQuery.sizeOf(context).width * _animation.value,
+                child: SizedBox(
+                  width: MediaQuery.sizeOf(context).width * .6,
+                  child: Image.asset(
+                    ConstDrawables.logo,
+                  ),
                 ),
               ),
             ),
