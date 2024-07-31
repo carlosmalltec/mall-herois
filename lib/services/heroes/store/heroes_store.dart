@@ -46,6 +46,7 @@ class HeroesStore {
                 name: data.name,
               );
               await registerHeroes(requestData);
+              await requestBaseDao.deleteRequest(data.created!);
               break;
             case "PUT":
               final requestData = RequestModel(
@@ -55,6 +56,7 @@ class HeroesStore {
                 id: data.id,
               );
               await updateHeroes(requestData);
+              await requestBaseDao.deleteRequest(data.created!);
               break;
             case "DELETE":
               final requestData = RequestModel(
@@ -64,6 +66,7 @@ class HeroesStore {
                 id: data.id,
               );
               await deleteHeroes(requestData);
+              await requestBaseDao.deleteRequest(data.created!);
               break;
             default:
           }
