@@ -3,7 +3,11 @@
     Cadastrar Heróris com base nas categorias.
 
 # Fazer o Builder
-    - flutter build apk --dart-define=ACCESS_TOKEN=xxxx --dart-define=TIME_CACHE_MINUTES=5  --dart-define=API_KEY=https://xxx.net
+    - flutter build apk --release --dart-define=ACCESS_TOKEN=xxxx --dart-define=TIME_CACHE_MINUTES=5  --dart-define=API_KEY=https://xxx.net
+    - flutter build apk --release --dart-define-from-file=".env"
+    
+    - flutter build apk --debug --dart-define=ACCESS_TOKEN=xxxx --dart-define=TIME_CACHE_MINUTES=5  --dart-define=API_KEY=https://xxx.net
+    - flutter build apk --debug --dart-define-from-file=".env"
 
 # Controle de cache
 
