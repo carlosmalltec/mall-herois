@@ -2,6 +2,9 @@
 
     Cadastrar Heróris com base nas categorias.
 
+# Fazer o Builder
+    - flutter build apk --dart-define=ACCESS_TOKEN=xxxx --dart-define=TIME_CACHE_MINUTES=5  --dart-define=API_KEY=https://xxx.net
+
 # Controle de cache
 
     - Para listagens das categorias e dos Heróis serão armazenadas em memória. Para evitar inserir dados em memória a cada listagem utilizei um controle de cache de 5 minutos, cada requisição é analisada com base nessa regra e armazena local ou não.
