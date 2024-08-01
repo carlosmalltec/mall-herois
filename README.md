@@ -43,3 +43,7 @@
 
     => development
     mocktail: ^1.0.4
+
+# Diagrama dos fluxos de telas
+![Diagrama de telas](https://github.com/carlosmalltec/mall-herois/blob/main/screens/diagrama-telas.png?raw=true)
+
