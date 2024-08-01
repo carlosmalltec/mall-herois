@@ -9,6 +9,13 @@
     - flutter build apk --debug --dart-define=ACCESS_TOKEN=xxxx --dart-define=TIME_CACHE_MINUTES=5  --dart-define=API_KEY=https://xxx.net
     - flutter build apk --debug --dart-define-from-file=".env"
 
+# Executar Device ou no Dispositivo
+    - flutter run --release --dart-define=ACCESS_TOKEN=xxxx --dart-define=TIME_CACHE_MINUTES=5  --dart-define=API_KEY=https://xxx.net
+    - flutter run --release --dart-define-from-file=".env"
+
+    - flutter run --debug --dart-define=ACCESS_TOKEN=xxxx --dart-define=TIME_CACHE_MINUTES=5  --dart-define=API_KEY=https://xxx.net
+    - flutter run --debug --dart-define-from-file=".env"
+
 # Controle de cache
 
     - Para listagens das categorias e dos Heróis serão armazenadas em memória. Para evitar inserir dados em memória a cada listagem utilizei um controle de cache de 5 minutos, cada requisição é analisada com base nessa regra e armazena local ou não.
