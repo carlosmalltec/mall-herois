@@ -33,6 +33,7 @@ class HomeControllers extends ChangeNotifier {
   }
 
   Future<void> getHeroes() async {
+    checkRequestStorage();
     setLoadingHeroes(TypeStates.loading);
     final results = await _heroesStore.getHeroes();
     results.fold((l) {

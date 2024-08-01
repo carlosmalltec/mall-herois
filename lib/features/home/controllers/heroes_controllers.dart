@@ -5,7 +5,6 @@ import '../../../services/heroes/data/models/request_model.dart';
 import '../../../services/heroes/store/heroes_store.dart';
 import '../../../services/type_failures/errors.dart';
 
-
 class HeroesControllers extends ChangeNotifier {
   final HeroesStore _heroesStore;
 
@@ -54,6 +53,7 @@ class HeroesControllers extends ChangeNotifier {
       onSuccess!(r);
     });
   }
+
   Future<void> deleteHeroes(
     RequestModel parameters, {
     Function(bool)? onSuccess,
